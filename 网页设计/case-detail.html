@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习历程 - 笔记分享</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 学习历程页面样式 */
+        .learning-journal-section {
+            padding: 60px 0;
+        }
+        
+        .learning-journal-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 学习建议样式 */
+        .case-tips {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .case-tips h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .case-tips ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        
+        .case-tips li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .case-tips li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: -20px;
+            font-weight: bold;
+        }
+        
+        /* 学习笔记样式增强 */
+        .learning-notes {
+            background-color: #f9f9f9;
+        }
+        
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .notes-header h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        
+        .notes-meta {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .notes-container textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 10px;
+            min-height: 150px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .notes-container textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .notes-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        /* 笔记分享样式 */
+        .shared-notes {
+            background-color: #f9f9f9;
+        }
+        
+        .shared-notes h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .note-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .note-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .note-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .note-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .note-content {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .note-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .note-action {
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s ease;
+        }
+        
+        .note-action:hover {
+            color: var(--primary-color);
+        }
+        
+        /* 按钮样式增强 */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e66a9d;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>学习历程</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="categories.html">学习案例</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 学习历程主区域 -->
+    <section class="learning-journal-section">
+        <div class="container">
+            <h2>学习历程</h2>
+            
+            <!-- 学习建议部分 -->
+            <div class="section-container case-tips">
+                <h3>学习建议</h3>
+                <ul>
+                    <li>坚持每日练习，保持学习连贯性</li>
+                    <li>遇到困难不要轻易放弃，多尝试不同方法</li>
+                    <li>定期复习，巩固所学知识</li>
+                    <li>寻找学习伙伴，互相鼓励进步</li>
+                    <li>记录学习笔记，培养良好的学习习惯</li>
+                    <li>分享学习经验，帮助他人的同时深化自己的理解</li>
+                </ul>
+            </div>
+            
+            <!-- 我的学习笔记功能 -->
+            <div class="section-container learning-notes">
+
+                    <div class="case-tips">
+                        <h3>学习建议</h3>
+                        <ul>
+                            <li>坚持每日练习，保持学习连贯性</li>
+                            <li>遇到困难不要轻易放弃，多尝试不同方法</li>
+                            <li>定期复习，巩固所学知识</li>
+                            <li>寻找学习伙伴，互相鼓励进步</li>
+                        </ul>
+                    </div>
+
+                <div class="notes-header">
+                    <h3>我的学习笔记</h3>
+                    <div class="notes-meta">记录并分享你的学习心得</div>
+                </div>
+                <div class="notes-container">
+                    <textarea placeholder="在这里记录你的学习心得和笔记，点击分享按钮可以让其他学习者看到你的笔记..."></textarea>
+                    <div class="notes-actions">
+                        <button class="btn btn-secondary save-notes-btn">保存笔记</button>
+                        <button class="btn btn-primary share-notes-btn">分享笔记</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 他人分享的笔记 -->
+            <div class="section-container shared-notes">
+                <h3>学习者分享的笔记</h3>
+                <div class="note-card">
+                    <div class="note-header">
+                        <div class="note-author">前端爱好者</div>
+                        <div class="note-date">2天前</div>
+                    </div>
+                    <div class="note-content">学习HTML和CSS基础时，我发现通过实际制作一个简单的个人网页比单纯看书效果要好很多。建议大家在学习每个新概念后，立即动手实践，这样记忆会更加深刻。</div>
+                    <div class="note-actions">
+                        <div class="note-action">👍 有用(28)</div>
+                        <div class="note-action">💬 评论(3)</div>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <div class="note-header">
+                        <div class="note-author">设计初学者</div>
+                        <div class="note-date">4天前</div>
+                    </div>
+                    <div class="note-content">在学习色彩搭配时，我整理了一些实用的配色技巧：1. 主色+辅助色+点缀色的黄金法则；2. 利用色环上的对比色或近似色；3. 注意色彩的饱和度和明度搭配。这些技巧对我的设计水平提升很大。</div>
+                    <div class="note-actions">
+                        <div class="note-action">👍 有用(42)</div>
+                        <div class="note-action">💬 评论(5)</div>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <div class="note-header">
+                        <div class="note-author">学习达人</div>
+                        <div class="note-date">1周前</div>
+                    </div>
+                    <div class="note-content">分享一个高效的学习方法：费曼学习法。简单来说就是把学到的知识用最简单的话讲给别人听，如果讲不清楚就说明还没有真正掌握，需要继续学习。这种方法能帮助我们发现知识盲点并加深理解。</div>
+                    <div class="note-actions">
+                        <div class="note-action">👍 有用(67)</div>
+                        <div class="note-action">💬 评论(12)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>学习历程</h3>
+                    <p>记录成长，分享经验</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="categories.html">学习案例</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 学习历程. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 保存笔记按钮点击事件
+        document.querySelector('.save-notes-btn').addEventListener('click', function() {
+            const notesTextarea = document.querySelector('.learning-notes textarea');
+            if (notesTextarea.value.trim()) {
+                // 模拟保存到本地存储
+                localStorage.setItem('userNotes', notesTextarea.value);
+                alert('笔记已保存！');
+                // 显示保存成功的视觉反馈
+                this.textContent = '已保存';
+                setTimeout(() => {
+                    this.textContent = '保存笔记';
+                }, 2000);
+            } else {
+                alert('请先输入笔记内容');
+            }
+        });
+
+        // 分享笔记按钮点击事件
+        document.querySelector('.share-notes-btn').addEventListener('click', function() {
+            const notesTextarea = document.querySelector('.learning-notes textarea');
+            if (notesTextarea.value.trim()) {
+                alert('笔记已分享！其他学习者现在可以看到你的笔记了。');
+                
+                // 模拟将笔记添加到分享笔记列表
+                const sharedNotesContainer = document.querySelector('.shared-notes');
+                const newNoteCard = document.createElement('div');
+                newNoteCard.className = 'note-card';
+                newNoteCard.innerHTML = `
+                    <div class="note-header">
+                        <div class="note-author">我</div>
+                        <div class="note-date">刚刚</div>
+                    </div>
+                    <div class="note-content">${notesTextarea.value}</div>
+                    <div class="note-actions">
+                        <div class="note-action">👍 有用(0)</div>
+                        <div class="note-action">💬 评论(0)</div>
+                    </div>
+                `;
+                
+                // 添加淡入动画效果
+                newNoteCard.style.opacity = '0';
+                newNoteCard.style.transform = 'translateY(20px)';
+                newNoteCard.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                
+                // 插入到第一个笔记卡片之前
+                const firstNoteCard = sharedNotesContainer.querySelector('.note-card');
+                sharedNotesContainer.insertBefore(newNoteCard, firstNoteCard);
+                
+                // 触发动画
+                setTimeout(() => {
+                    newNoteCard.style.opacity = '1';
+                    newNoteCard.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                alert('请先输入要分享的笔记内容');
+            }
+        });
+        
+        // 加载保存的笔记
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedNotes = localStorage.getItem('userNotes');
+            if (savedNotes) {
+                document.querySelector('.learning-notes textarea').value = savedNotes;
+            }
+        });
+        
+        // 为点赞和评论按钮添加交互效果
+        document.querySelectorAll('.note-action').forEach(action => {
+            action.addEventListener('click', function() {
+                if (this.textContent.includes('👍')) {
+                    let countMatch = this.textContent.match(/\d+/);
+                    if (countMatch) {
+                        let count = parseInt(countMatch[0]) + 1;
+                        this.textContent = `👍 有用(${count})`;
+                        // 添加点击动画效果
+                        this.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                        }, 200);
+                    }
+                } else if (this.textContent.includes('💬')) {
+                    alert('评论功能将在未来版本开放，敬请期待！');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

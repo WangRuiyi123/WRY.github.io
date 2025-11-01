@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+  <!-- 背景 -->
+  <rect x="0" y="0" width="600" height="200" fill="#ffffff"/>
+  
+  <!-- 左侧笔记本（极简版） -->
+  <rect x="30" y="30" width="160" height="140" fill="#ffffff" stroke="#e0e0e0" stroke-width="1" rx="2"/>
+  
+  <!-- 笔记本线条 -->
+  <line x1="50" y1="40" x2="50" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- 日语单词占位符（用简单线条表示） -->
+  <rect x="65" y="55" width="120" height="3" fill="#4285f4" rx="1"/>
+  <rect x="65" y="80" width="110" height="3" fill="#4285f4" rx="1"/>
+  <rect x="65" y="105" width="115" height="3" fill="#4285f4" rx="1"/>
+  
+  <!-- 单词标记点 -->
+  <circle cx="60" cy="56" r="2" fill="#4285f4"/>
+  <circle cx="60" cy="81" r="2" fill="#4285f4"/>
+  <circle cx="60" cy="106" r="2" fill="#4285f4"/>
+  
+  <!-- 简约进度图表 -->
+  <g transform="translate(230, 40)">
+    <rect x="0" y="0" width="120" height="80" fill="#ffffff" stroke="#e0e0e0" stroke-width="1" rx="2"/>
+    
+    <!-- 听力进度 -->
+    <rect x="10" y="15" width="90" height="12" fill="#f1f3f4" rx="1"/>
+    <rect x="10" y="15" width="75" height="12" fill="#4285f4" rx="1"/>
+    
+    <!-- 阅读进度 -->
+    <rect x="10" y="50" width="90" height="12" fill="#f1f3f4" rx="1"/>
+    <rect x="10" y="50" width="65" height="12" fill="#34a853" rx="1"/>
+  </g>
+  
+  <!-- 简约词汇统计 -->
+  <g transform="translate(380, 40)">
+    <rect x="0" y="0" width="120" height="80" fill="#ffffff" stroke="#e0e0e0" stroke-width="1" rx="2"/>
+    
+    <!-- 词汇量（用圆圈表示） -->
+    <circle cx="30" cy="35" r="15" fill="#f8f9fa" stroke="#d0d0d0" stroke-width="1"/>
+    <circle cx="30" cy="35" r="8" fill="#4285f4" opacity="0.6"/>
+    
+    <!-- 语法点（用圆圈表示） -->
+    <circle cx="90" cy="35" r="15" fill="#f8f9fa" stroke="#d0d0d0" stroke-width="1"/>
+    <circle cx="90" cy="35" r="6" fill="#34a853" opacity="0.6"/>
+  </g>
+  
+  <!-- 简约学习时间线 -->
+  <g transform="translate(230, 140)">
+    <line x1="0" y1="0" x2="270" y2="0" stroke="#d0d0d0" stroke-width="2"/>
+    
+    <!-- 月份标记（简化为圆点） -->
+    <circle cx="0" cy="0" r="6" fill="#5f6368"/>
+    <circle cx="135" cy="0" r="6" fill="#5f6368"/>
+    <circle cx="270" cy="0" r="6" fill="#ea4335"/>
+  </g>
+</svg>

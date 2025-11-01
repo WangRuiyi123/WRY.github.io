@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+  <!-- 背景 -->
+  <rect width="600" height="200" fill="#ffffff"/>
+  
+  <!-- 简化木桌 -->
+  <rect x="40" y="120" width="520" height="60" fill="#d4a76a" rx="3"/>
+  <rect x="70" y="180" width="460" height="8" fill="#9b7a52"/>
+  
+  <!-- 桌腿 -->
+  <rect x="100" y="188" width="10" height="12" fill="#9b7a52"/>
+  <rect x="500" y="188" width="10" height="12" fill="#9b7a52"/>
+  
+  <!-- 笔记本电脑 - 极简版 -->
+  <rect x="120" y="60" width="300" height="180" fill="#1e1e1e" rx="2" transform="rotate(-5, 270, 120)"/>
+  <rect x="125" y="65" width="290" height="130" fill="#000000" rx="1" transform="rotate(-5, 270, 120)"/>
+  <rect x="150" y="70" width="240" height="100" fill="#2d2d30" rx="1" transform="rotate(-5, 270, 120)"/>
+  
+  <!-- 屏幕内容 - 极简表示 -->
+  <rect x="165" y="85" width="15" height="8" fill="#0451a5" rx="1" transform="rotate(-5, 270, 120)"/>
+  <rect x="165" y="100" width="60" height="4" fill="#569cd6" transform="rotate(-5, 270, 120)"/>
+  <rect x="185" y="110" width="50" height="4" fill="#569cd6" transform="rotate(-5, 270, 120)"/>
+  <rect x="205" y="120" width="40" height="4" fill="#9cdcfe" transform="rotate(-5, 270, 120)"/>
+  
+  <!-- 键盘 -->
+  <rect x="150" y="195" width="240" height="15" fill="#333333" rx="2" transform="rotate(-5, 270, 195)"/>
+  
+  <!-- 书本 -->
+  <g transform="translate(450, 130)">
+    <rect x="0" y="0" width="80" height="60" fill="#ffffff" stroke="#dddddd" stroke-width="1" transform="rotate(-10)"/>
+    <rect x="0" y="0" width="5" height="60" fill="#e74c3c" transform="rotate(-10)"/>
+    <line x1="15" y1="15" x2="70" y2="15" stroke="#dddddd" stroke-width="1" transform="rotate(-10)"/>
+    <line x1="15" y1="30" x2="70" y2="30" stroke="#dddddd" stroke-width="1" transform="rotate(-10)"/>
+    <line x1="15" y1="45" x2="70" y2="45" stroke="#dddddd" stroke-width="1" transform="rotate(-10)"/>
+  </g>
+  
+  <!-- 咖啡杯 -->
+  <g transform="translate(530, 140)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+    <ellipse cx="0" cy="15" rx="15" ry="10" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+    <path d="M -15 0 L -15 15 L 15 15 L 15 0 Z" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+    <path d="M 15 5 A 8 8 0 0 1 23 5 L 23 15 A 8 8 0 0 1 15 15 Z" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+    <ellipse cx="0" cy="5" rx="12" ry="7" fill="#8b5a2b"/>
+  </g>
+  
+  <!-- 高光 -->
+  <rect x="135" y="70" width="15" height="5" fill="#ffffff" opacity="0.3" transform="rotate(-5, 270, 120)"/>
+</svg>

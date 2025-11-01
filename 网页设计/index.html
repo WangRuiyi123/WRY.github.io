@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习历程 - 记录你的成长</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 学习案例样式 */
+        .examples {
+            padding: 60px 0;
+            background-color: var(--background-color);
+        }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .example-card {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 126, 185, 0.2);
+        }
+        .example-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        .case-free-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        /* 登录注册表单样式 */
+        .auth-forms {
+            margin-top: 30px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            padding: 5px;
+        }
+        .auth-tab {
+            flex: 1;
+            padding: 12px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: var(--transition);
+            font-weight: bold;
+        }
+        .auth-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .auth-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+        .form-checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .form-checkbox input {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>学习历程</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="categories.html">学习案例</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>记录学习历程，<br>助力共同成长</h2>
+                <p>简单记录你的学习过程，分享经验，帮助他人。完全免费的学习社区平台！</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.svg" alt="学习历程">
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section class="features">
+        <div class="container">
+            <h2>我们的功能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>记录学习</h3>
+                    <p>轻松记录每天的学习内容和进度</p>
+                </div>
+                <div class="feature-card">
+                    <h3>分享经验</h3>
+                    <p>与其他学习者分享你的学习心得</p>
+                </div>
+                <div class="feature-card">
+                    <h3>互相学习</h3>
+                    <p>从他人的学习历程中获取灵感</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 登录注册区域 -->
+    <section class="auth-section">
+        <div class="container">
+            <h2>立即加入我们的学习社区</h2>
+            <div class="auth-forms">
+                <!-- 登录注册标签页 -->
+                <div class="auth-tabs">
+                    <div class="auth-tab active" onclick="showTab('login')">登录</div>
+                    <div class="auth-tab" onclick="showTab('register')">注册</div>
+                </div>
+                
+                <!-- 登录表单 -->
+                <div id="login" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">邮箱</label>
+                        <input type="email" id="login-email" placeholder="请输入邮箱地址">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">密码</label>
+                        <input type="password" id="login-password" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">记住我</label>
+                    </div>
+                    <button class="auth-btn">登录</button>
+                </div>
+                
+                <!-- 注册表单 -->
+                <div id="register" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-username">用户名</label>
+                        <input type="text" id="register-username" placeholder="请设置用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">邮箱</label>
+                        <input type="email" id="register-email" placeholder="请输入邮箱地址">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">密码</label>
+                        <input type="password" id="register-password" placeholder="请设置密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">确认密码</label>
+                        <input type="password" id="confirm-password" placeholder="请再次输入密码">
+                    </div>
+                    <button class="auth-btn">注册</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>学习历程</h3>
+                    <p>记录成长，分享经验</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#examples">学习案例</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 学习历程. 完全免费的学习社区平台.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 登录注册切换功能
+        function showTab(tabId) {
+            // 隐藏所有表单
+            const forms = document.querySelectorAll('.auth-form');
+            forms.forEach(form => form.classList.remove('active'));
+            
+            // 移除所有标签页的活动状态
+            const tabs = document.querySelectorAll('.auth-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // 显示选中的表单和标签页
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
