@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <!-- 背景气泡 -->
+  <circle cx="300" cy="200" r="180" fill="#fff0f8" opacity="0.8"/>
+  <circle cx="300" cy="200" r="160" fill="#fdf0ff" opacity="0.5"/>
+  
+  <!-- 书本图标 - 可爱版 -->
+  <g transform="translate(150, 150) scale(0.8)">
+    <rect x="0" y="0" width="100" height="140" rx="12" fill="#ff7eb9"/>
+    <rect x="85" y="5" width="15" height="130" rx="8" fill="#8c52ff"/>
+    <line x1="0" y1="35" x2="100" y2="35" stroke="white" stroke-width="2" opacity="0.3"/>
+    <line x1="0" y1="70" x2="100" y2="70" stroke="white" stroke-width="2" opacity="0.3"/>
+    <line x1="0" y1="105" x2="100" y2="105" stroke="white" stroke-width="2" opacity="0.3"/>
+    <!-- 可爱表情 -->
+    <circle cx="30" cy="25" r="10" fill="white" opacity="0.8"/>
+    <circle cx="70" cy="25" r="10" fill="white" opacity="0.8"/>
+    <path d="M35,55 Q50,70 65,55" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 进度图表 - 可爱版 -->
+  <g transform="translate(290, 100) scale(0.7)">
+    <rect x="0" y="0" width="120" height="80" rx="15" fill="white" stroke="#ffd6e7" stroke-width="3"/>
+    <path d="M15,60 L35,50 L55,55 L75,30 L95,40 L105,20" fill="none" stroke="#ff7eb9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="15" cy="60" r="6" fill="#ff7eb9"/>
+    <circle cx="35" cy="50" r="6" fill="#ff7eb9"/>
+    <circle cx="55" cy="55" r="6" fill="#ff7eb9"/>
+    <circle cx="75" cy="30" r="6" fill="#ff7eb9"/>
+    <circle cx="95" cy="40" r="6" fill="#ff7eb9"/>
+    <circle cx="105" cy="20" r="6" fill="#ff7eb9"/>
+    <!-- 星星装饰 -->
+    <path d="M15,15 L18,20 L24,20 L20,23 L22,29 L15,26 L8,29 L10,23 L6,20 L12,20 Z" fill="#ffbe0b"/>
+  </g>
+  
+  <!-- 视频图标 - 可爱版 -->
+  <g transform="translate(360, 220) scale(0.6)">
+    <rect x="0" y="0" width="100" height="80" rx="15" fill="#ffbe0b"/>
+    <polygon points="30,20 70,40 30,60" fill="white" rx="5"/>
+    <circle cx="85" cy="15" r="10" fill="white" opacity="0.8"/>
+    <!-- 睫毛 -->
+    <path d="M15,15 Q12,10 10,15" stroke="white" stroke-width="2" fill="none"/>
+    <path d="M25,15 Q22,10 20,15" stroke="white" stroke-width="2" fill="none"/>
+    <path d="M35,15 Q32,10 30,15" stroke="white" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- 图片图标 - 可爱版 -->
+  <g transform="translate(220, 250) scale(0.6)">
+    <rect x="0" y="0" width="80" height="80" rx="15" fill="white" stroke="#ffd6e7" stroke-width="3"/>
+    <rect x="10" y="10" width="60" height="40" rx="8" fill="#ffa8d3"/>
+    <circle cx="40" cy="55" r="15" fill="#ff4d6d"/>
+    <!-- 爱心装饰 -->
+    <path d="M15,25 C15,15 25,15 25,25 C25,15 35,15 35,25" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M20,35 Q25,40 30,35" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 音频波形 - 可爱版 -->
+  <g transform="translate(180, 80) scale(0.5)">
+    <rect x="0" y="15" width="8" height="20" fill="#8c52ff" rx="4"/>
+    <rect x="12" y="5" width="8" height="40" fill="#8c52ff" rx="4"/>
+    <rect x="24" y="10" width="8" height="30" fill="#8c52ff" rx="4"/>
+    <rect x="36" y="0" width="8" height="50" fill="#8c52ff" rx="4"/>
+    <rect x="48" y="15" width="8" height="20" fill="#8c52ff" rx="4"/>
+    <rect x="60" y="10" width="8" height="30" fill="#8c52ff" rx="4"/>
+    <rect x="72" y="5" width="8" height="40" fill="#8c52ff" rx="4"/>
+    <rect x="84" y="15" width="8" height="20" fill="#8c52ff" rx="4"/>
+  </g>
+  
+  <!-- 浮动气泡 - 可爱版 -->
+  <circle cx="480" cy="100" r="25" fill="white" opacity="0.95" stroke="#ffd6e7" stroke-width="3">
+    <animate attributeName="cy" values="100;90;100" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="480" cy="95" r="6" fill="#ff7eb9" opacity="0.8"/>
+  
+  <circle cx="440" cy="320" r="20" fill="white" opacity="0.95" stroke="#ffd6e7" stroke-width="3">
+    <animate attributeName="cy" values="320;330;320" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="440" cy="315" r="4" fill="#8c52ff" opacity="0.8"/>
+  
+  <circle cx="120" cy="300" r="15" fill="white" opacity="0.95" stroke="#ffd6e7" stroke-width="3">
+    <animate attributeName="cy" values="300;290;300" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="295" r="3" fill="#ffbe0b" opacity="0.8"/>
+  
+  <!-- 装饰星星 -->
+  <path d="M450,200 L454,210 L465,212 L457,219 L460,230 L450,226 L440,230 L443,219 L435,212 L446,210 Z" fill="#ffbe0b" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M100,120 L104,130 L115,132 L107,139 L110,150 L100,146 L90,150 L93,139 L85,132 L96,130 Z" fill="#ffbe0b" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+  </path>
+</svg>
